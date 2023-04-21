@@ -2,6 +2,9 @@ using CrudExampleAng.Models;
 using Microsoft.EntityFrameworkCore;
 using CrudExampleAng.Services.Contract;
 using CrudExampleAng.Services.Implementations;
+using AutoMapper;
+using CrudExampleAng.DTOs;
+using CrudExampleAng.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,14 +13,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+#region Databases
 // Calling the database
 builder.Services.AddDbContext<DbCrudAngContext>(options=> {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConectSQL")); // Calling the Database from app,json
 });
+#endregion
 
-//Relating implementations classes whith interfaces
+#region Classes with interfaces
+//Relating implementations classes with interfaces
 builder.Services.AddScoped<IOfficeService, OfficeService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+#endregion
+
+#region AutoMapper
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+#endregion
+
+
 
 var app = builder.Build();
 
