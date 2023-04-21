@@ -13,7 +13,7 @@ namespace CrudExampleAng.Services.Implementations
             _dbContex=dbContex;
         }
 
-        // To get employee list
+        // To get employee in office list
         public async Task<List<Office>> GetList()
         {
             try
