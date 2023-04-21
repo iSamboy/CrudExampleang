@@ -8,7 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 
+// Calling the database
+builder.Services.AddDbContext<DbCrudAngContext>(options=> {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConectSQL")); // Calling the Database from app,json
+});
+
+
 
 var app = builder.Build();
 
