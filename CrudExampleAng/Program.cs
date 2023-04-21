@@ -1,5 +1,7 @@
 using CrudExampleAng.Models;
 using Microsoft.EntityFrameworkCore;
+using CrudExampleAng.Services.Contract;
+using CrudExampleAng.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +15,9 @@ builder.Services.AddDbContext<DbCrudAngContext>(options=> {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConectSQL")); // Calling the Database from app,json
 });
 
-
+//Relating implementations classes whith interfaces
+builder.Services.AddScoped<IOfficeService, OfficeService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 var app = builder.Build();
 

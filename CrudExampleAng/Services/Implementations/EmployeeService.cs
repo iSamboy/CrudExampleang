@@ -4,7 +4,7 @@ using CrudExampleAng.Services.Contract;
 
 namespace CrudExampleAng.Services.Implementations
 {
-    public class EmployeeService: IEmployeeService
+    public class EmployeeService: IEmployeeService // Employee Interface
     {
         private DbCrudAngContext _dbContex;
         

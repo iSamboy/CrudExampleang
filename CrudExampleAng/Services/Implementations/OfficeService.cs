@@ -4,7 +4,7 @@ using CrudExampleAng.Services.Contract;
 
 namespace CrudExampleAng.Services.Implementations
 {
-    public class OfficeService:IOfficeService
+    public class OfficeService:IOfficeService // Office Interface
     {
         private DbCrudAngContext _dbContex;
 
@@ -13,6 +13,7 @@ namespace CrudExampleAng.Services.Implementations
             _dbContex=dbContex;
         }
 
+        // To get employee list
         public async Task<List<Office>> GetList()
         {
             try
