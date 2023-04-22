@@ -1,4 +1,4 @@
 export const environment = {
-    production:false 
-    
+    production:false, 
+    endPoint: "http://localhost:5096/" // Connecting to API
 };
