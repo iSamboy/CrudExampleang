@@ -13,7 +13,7 @@ import {HttpClientModule} from '@angular/common/http';
 // To work with Angular Material components 
           // (Tables)
 import {MatTableModule} from '@angular/material/table';         // tables
-import {MatPaginatorModule} from '@angular/material/paginator'; // paginator tables
+import {MatPaginatorModule} from '@angular/material/paginator'; // tables paginator
           // (Forms)
 import {MatButtonModule} from '@angular/material/button';        // buttons
 import {MatFormFieldModule} from '@angular/material/form-field'; // forms
